@@ -46,15 +46,15 @@
 
         lower_layer {
             // -----------------------------------------------------------------------------------------
-            // |  F1  |  F2 |  F3 |  F4 |  F5 |  F6 |   |     | UP  |     |     |     | BKSP |
-            // |  F7  |  F8 |  F9 | F10 | F11 | F12 |   | LFT | DWN | RGT |     |     |      |
-            // | SHFT |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | ESC  |
+            // |  F1  |  F2 |  F3 |  F4 |  F5 |  F6 |   | DEL | UP  | INS | P_UP | HOME | BKSP |
+            // |  F7  |  F8 |  F9 | F10 | F11 | F12 |   | LFT | DWN | RGT | P_DN | END  |      |
+            // | SHFT |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9   |  0   | ESC  |
             //                    | GUI |     | ENT |   | SPC |     | ALT |
 
             bindings = <
-   &kp F1  &kp F2  &kp F3    &kp F4   &kp F5   &kp F6       &trans    &kp UP     &trans  &trans  &trans  &kp BSPC
-   &kp F7  &kp F8  &kp F9   &kp F10  &kp F11  &kp F12     &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans    &trans
-&kp LSHFT  &kp N1  &kp N2    &kp N3   &kp N4   &kp N5       &kp N6    &kp N7     &kp N8  &kp N9  &kp N0   &kp ESC
+   &kp F1  &kp F2  &kp F3    &kp F4   &kp F5   &kp F6      &kp DEL    &kp UP    &kp INS      &kp PG_UP  &kp HOME  &kp BSPC
+   &kp F7  &kp F8  &kp F9   &kp F10  &kp F11  &kp F12     &kp LEFT  &kp DOWN  &kp RIGHT  &kp PAGE_DOWN   &kp END    &trans
+&kp LSHFT  &kp N1  &kp N2    &kp N3   &kp N4   &kp N5       &kp N6    &kp N7     &kp N8         &kp N9    &kp N0   &kp ESC
                            &kp LGUI   &trans  &kp RET    &kp SPACE    &trans   &kp RALT
             >;
         };
