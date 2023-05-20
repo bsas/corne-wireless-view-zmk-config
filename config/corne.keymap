@@ -11,9 +11,18 @@
     combos {
         compatible = "zmk,combos";
 
-        new_combo {
+        activate_special_layer {
             bindings = <&mo 3>;
-            key-positions = <37 40>;
+            key-positions = <40 37>;
+        };
+    };
+
+    macros {
+        empty_func: empty_func {
+            compatible = "zmk,behavior-macro";
+            label = "EMPTY_FUNC";
+            #binding-cells = <0>;
+            bindings = <&kp F &kp LPAR &kp RPAR &kp SPACE &kp RBKT &kp RBRC>;
         };
     };
 
@@ -65,12 +74,18 @@
             >;
         };
 
-        layer_3 {
+        special_layer {
+            // -----------------------------------------------------------------------------------------
+            // | F() |     |     |     |     |     |   |     |     |     |     |     | BKSP |
+            // |     |     |     |     |     |     |   |     |     |     |     |     |      |
+            // |     |     |     |     |     |     |   |     |     |     |     |     |      |
+            //                   | GUI |     | ENT |   | SPC |     | ALT |
+
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&empty_func  &trans  &trans    &trans  &trans     &trans       &trans  &trans    &trans  &trans  &trans  &kp BSPC
+     &trans  &trans  &trans    &trans  &trans     &trans       &trans  &trans    &trans  &trans  &trans    &trans
+     &trans  &trans  &trans    &trans  &trans     &trans       &trans  &trans    &trans  &trans  &trans    &trans
+                             &kp LGUI  &trans  &kp ENTER    &kp SPACE  &trans  &kp RALT
             >;
         };
     };
